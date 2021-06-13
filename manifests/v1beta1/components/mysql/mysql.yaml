@@ -33,7 +33,7 @@ spec:
                   name: katib-mysql-secrets
                   key: MYSQL_ROOT_PASSWORD
             - name: MYSQL_ALLOW_EMPTY_PASSWORD
-              value: "true"
+              value: "false"
             - name: MYSQL_DATABASE
               value: "katib"
           ports:
