@@ -3,18 +3,21 @@ kind: CustomResourceDefinition
 metadata:
   name: experiments.kubeflow.org
 spec:
-  additionalPrinterColumns:
-    - JSONPath: .status.conditions[-1:].type
-      name: Type
-      type: string
-    - JSONPath: .status.conditions[-1:].status
-      name: Status
-      type: string
-    - JSONPath: .metadata.creationTimestamp
-      name: Age
-      type: date
   group: kubeflow.org
-  version: v1beta1
+  versions:
+      name: v1beta1
+        served: true
+        storage: true
+        additionalPrinterColumns:
+        - JSONPath: .status.conditions[-1:].type
+          name: Type
+          type: string
+        - JSONPath: .status.conditions[-1:].status
+          name: Status
+          type: string
+        - JSONPath: .metadata.creationTimestamp
+          name: Age
+          type: date
   scope: Namespaced
   subresources:
     status: {}
