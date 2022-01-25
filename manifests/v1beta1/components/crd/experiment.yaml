@@ -5,21 +5,21 @@ metadata:
 spec:
   group: kubeflow.org
   versions:
-      - name: v1beta1
-        served: true
-        storage: true
-        additionalPrinterColumns:
-        - jsonPath: .status.conditions[-1:].type
-          name: Type
-          type: string
-        - jsonPath: .status.conditions[-1:].status
-          name: Status
-          type: string
-        - jsonPath: .metadata.creationTimestamp
-          name: Age
-          type: date
-      subresources:
-        status: {}
+  - name: v1beta1
+    served: true
+    storage: true
+    additionalPrinterColumns:
+    - jsonPath: .status.conditions[-1:].type
+      name: Type
+      type: string
+    - jsonPath: .status.conditions[-1:].status
+      name: Status
+      type: string
+    - jsonPath: .metadata.creationTimestamp
+      name: Age
+      type: date
+   subresources:
+   - status: {}
   scope: Namespaced
   names:
     kind: Experiment
