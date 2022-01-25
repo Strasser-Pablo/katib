@@ -24,9 +24,9 @@ spec:
       - jsonPath: .metadata.creationTimestamp
         name: Age
         type: date
+      subresources:
+        status: {}
   scope: Namespaced
-  subresources:
-    status: {}
   names:
     kind: Suggestion
     singular: suggestion
