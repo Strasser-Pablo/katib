@@ -9,15 +9,15 @@ spec:
       served: true
       storage: true
       additionalPrinterColumns:
-        - JSONPath: .status.conditions[-1:].type
-          name: Type
-          type: string
-        - JSONPath: .status.conditions[-1:].status
-          name: Status
-          type: string
-        - JSONPath: .metadata.creationTimestamp
-          name: Age
-          type: date
+      - jsonPath: .status.conditions[-1:].type
+        name: Type
+        type: string
+      - jsonPath: .status.conditions[-1:].status
+        name: Status
+        type: string
+      - jsonPath: .metadata.creationTimestamp
+        name: Age
+        type: date
   scope: Namespaced
   subresources:
     status: {}

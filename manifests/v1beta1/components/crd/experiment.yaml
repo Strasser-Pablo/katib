@@ -9,13 +9,13 @@ spec:
         served: true
         storage: true
         additionalPrinterColumns:
-        - JSONPath: .status.conditions[-1:].type
+        - jsonPath: .status.conditions[-1:].type
           name: Type
           type: string
-        - JSONPath: .status.conditions[-1:].status
+        - jsonPath: .status.conditions[-1:].status
           name: Status
           type: string
-        - JSONPath: .metadata.creationTimestamp
+        - jsonPath: .metadata.creationTimestamp
           name: Age
           type: date
   scope: Namespaced
